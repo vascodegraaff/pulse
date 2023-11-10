@@ -63,7 +63,7 @@ export default function Home() {
         title="Home"
       />
       <div className="p-8">
-        <h1 className="text-5xl font-black">Goodmorning</h1>
+        <h1 className="text-5xl font-bold">Good morning, Mark</h1>
         <div className="prose text-primary py-8">
           {"Here's your planning for today:"}
         </div>
