@@ -5,17 +5,17 @@ import { TitleBar } from "~/components/ListDetail/TitleBar";
 
 export default function Dashboard() {
   return (
-    <div className="flex w-full flex-col gap-8 p-8">
+    <>
       <TitleBar
-        magicTitle
+        // magicTitle
         // titleRef={titleRef}
         // scrollContainerRef={scrollContainerRef}
-        title="Home"
+        title="Dashboard"
       />
-      <h1 className="text-6xl font-black">Dashboard</h1>
-
-      <CardsStats />
-    </div>
+      <div className="flex flex-col gap-8 px-8">
+        <CardsStats />
+      </div>
+    </>
   );
 }
 

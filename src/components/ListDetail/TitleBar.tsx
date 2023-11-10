@@ -114,7 +114,7 @@ export function TitleBar({
           boxShadow: `0 1px 3px rgba(0,0,0,${currentScrollOffset})`,
           minHeight: "48px",
         }}
-        className={`filter-blur sticky top-0 z-10 flex flex-col justify-center px-3 py-2 dark:border-b dark:border-gray-900`}
+        className={`filter-blur sticky top-0 z-10 flex flex-col justify-center px-4 dark:border-b dark:border-gray-900`}
       >
         <div className="flex flex-none items-center justify-between">
           <span className="flex items-center space-x-3">
@@ -143,7 +143,7 @@ export function TitleBar({
 
             {leadingAccessory && <>{leadingAccessory}</>}
 
-            <div className="flex-col">
+            <div className="flex-col py-4">
               <h2
                 style={
                   magicTitle
@@ -153,7 +153,7 @@ export function TitleBar({
                       }
                     : {}
                 }
-                className="text-primary line-clamp-1 transform-gpu text-xl font-bold"
+                className="text-primary line-clamp-1 transform-gpu text-3xl font-black"
               >
                 {title}
               </h2>
