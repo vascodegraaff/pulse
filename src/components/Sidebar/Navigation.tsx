@@ -3,7 +3,7 @@ import { usePathname } from "next/navigation";
 
 import { DahsboardIcon, HomeIcon, StackIcon } from "../Icons";
 import { NavigationLink } from "./NavigationLink";
-import { HistoryIcon } from "lucide-react";
+import { GoalIcon, HistoryIcon } from "lucide-react";
 
 export function SidebarNavigation() {
   const pathname = usePathname();
@@ -27,6 +27,15 @@ export function SidebarNavigation() {
           icon: DahsboardIcon,
           trailingAccessory: null,
           isActive: pathname === "/dashboard",
+          trailingAction: null,
+          isExternal: false,
+        },
+        {
+          href: "/goals",
+          label: "Goals",
+          icon: GoalIcon,
+          trailingAccessory: null,
+          isActive: pathname === "/goals",
           trailingAction: null,
           isExternal: false,
         },
