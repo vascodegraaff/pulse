@@ -10,17 +10,9 @@ import { GoalIcon, SparkleIcon } from "lucide-react";
 import { IconListItem } from "~/components/ui/icon-list-item";
 
 export default function Home() {
-  // const scrollContainerRef = React.useRef(null)
-  // const titleRef = React.useRef(null)
-
   return (
     <Detail.Container data-cy="home-intro" ref={null}>
-      <TitleBar
-        magicTitle
-        // titleRef={titleRef}
-        // scrollContainerRef={scrollContainerRef}
-        title="Home"
-      />
+      <TitleBar title="Home" />
       <div className="p-8">
         <h1 className="text-5xl font-black">Goodmorning</h1>
         <div className="prose text-primary mt-4">

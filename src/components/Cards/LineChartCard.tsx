@@ -15,16 +15,18 @@ export default function LineChartCard({
   title,
   subtitle,
   data,
+  className,
 }: {
   title: string;
   subtitle: string;
   data: any;
+  className?: string;
 }) {
   const { theme } = useTheme();
 
   console.log(theme);
   return (
-    <Card>
+    <Card className={className}>
       <CardHeader>
         <CardTitle>{title}</CardTitle>
         <CardDescription>{subtitle}</CardDescription>

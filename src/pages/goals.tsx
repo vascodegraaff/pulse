@@ -2,20 +2,21 @@ import { SiteLayout } from "~/components/Layout";
 import CardsStats from "../components/Cards/CardStats";
 import React from "react";
 import { TitleBar } from "~/components/ListDetail/TitleBar";
+import GoalCard from "~/components/Cards/GoalCard";
 
 export default function Goals() {
   return (
-    <div className="flex w-full flex-col gap-8 px-8">
+    <>
       <TitleBar
-        magicTitle
         // titleRef={titleRef}
         // scrollContainerRef={scrollContainerRef}
-        title="Home"
+        title="Goals"
       />
-      <h1 className="text-6xl font-black">Goals</h1>
-
-      <CardsStats />
-    </div>
+      <div className="flex w-full flex-col gap-8 px-8">
+        <GoalCard title="Marathon" subtitle="Wow 40km " />{" "}
+        <GoalCard title="Marathon" subtitle="Wow 40km " />
+      </div>
+    </>
   );
 }
 
