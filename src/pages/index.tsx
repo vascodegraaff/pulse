@@ -5,6 +5,8 @@ import * as React from "react";
 import { Detail } from "../components/ListDetail/Detail";
 import { SiteLayout } from "~/components/Layout";
 import { TitleBar } from "~/components/ListDetail/TitleBar";
+import { BlockItem } from "~/components/ui/block-item";
+import { GoalIcon } from "lucide-react";
 // import { TitleBar } from './components/ListDetail/TitleBar'
 
 function SectionTitle(
@@ -35,26 +37,6 @@ interface TableRowProps {
   subtitle?: string;
 }
 
-function TableRow({ href, title, subtitle, date }: TableRowProps) {
-  return (
-    <a
-      target="_blank"
-      rel="noopener noreferrer"
-      href={href}
-      className="group flex items-center space-x-4"
-    >
-      <strong className="text-gray-1000 flex-none font-medium group-hover:text-blue-600 group-hover:underline dark:text-gray-100 dark:group-hover:text-blue-500">
-        {title}
-      </strong>
-      <span className="w-full shrink border-t border-dashed border-white dark:border-gray-800" />
-      {subtitle && <span className="text-tertiary flex-none">{subtitle}</span>}
-      {date && (
-        <span className="text-quaternary flex-none font-mono">{date}</span>
-      )}
-    </a>
-  );
-}
-
 function SectionContainer(
   props: React.JSX.IntrinsicAttributes &
     React.ClassAttributes<HTMLDivElement> &
@@ -80,22 +62,17 @@ export default function Home() {
         // scrollContainerRef={scrollContainerRef}
         title="Home"
       />
-
-      {/* Keep this div to trigger the magic scroll */}
-      <div className="p-4" ref={null} />
-
-      <Detail.ContentContainer>
-        <div className="space-y-8 pb-24 md:space-y-16">
-          <SectionContainer>
-            <SectionTitle> Pulse </SectionTitle>
-            <SectionContent>
-              <div className="prose text-primary">
-                <div>Yoooo welcome to Pulse!</div>
-              </div>
-            </SectionContent>
-          </SectionContainer>
+      <div className="p-8">
+        <h1 className="text-5xl font-black">Goodmorning</h1>
+        <div className="prose text-primary py-8">
+          {"Here's your planning for today:"}
         </div>
-      </Detail.ContentContainer>
+        <div className="flex items-center gap-8">
+          <BlockItem color={"purple"} text={"Goals"} icon={GoalIcon} />
+          <BlockItem color={"green"} text={"Goals"} icon={GoalIcon} />
+          <BlockItem color={"sky"} text={"Goals"} icon={GoalIcon} />
+        </div>
+      </div>
     </Detail.Container>
   );
 }

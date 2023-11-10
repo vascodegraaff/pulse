@@ -18,47 +18,6 @@ import { type GetStaticProps, type InferGetStaticPropsType } from "next/types";
 import { TitleBar } from "~/components/ListDetail/TitleBar";
 import { Detail } from "~/components/ListDetail/Detail";
 
-// type Project = {
-//   id: string;
-//   name: string;
-//   color: string;
-//   commentCount: number;
-//   isShared: boolean;
-//   isFavorite: boolean;
-//   url: string;
-//   isInboxProject: boolean;
-//   isTeamInbox: boolean;
-//   order: number;
-//   viewStyle: string;
-// };
-
-// type Task = {
-//   id: string,
-//   projectId: string,
-//   content: string,
-//   completed: boolean,
-//   labelIds: string[],
-//   parent: number,
-//   order: number,
-//   priority: number,
-//   commentCount: number,
-//   creator: number,
-//   assignee: number,
-//   created: string,
-//   due: {
-//     recurring: boolean,
-//     string: string,
-//     date: string,
-//     datetime: string,
-//     timezone: string,
-//   },
-//   url: string,
-//   duration: {
-//     value: number,
-//     unit: string,
-//   }|null,
-
-// }
 type Data = Project[] | Task[];
 
 const DataCard = ({

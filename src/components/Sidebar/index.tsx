@@ -21,7 +21,7 @@ export default function Sidebar() {
           // scrollContainerRef={scrollContainerRef}
           leadingAccessory={null}
           title="Pulse"
-          //   subtitle="Beep Beep Beep"
+          //   subtitle="Beep Beep Beep
         />
         <SidebarNavigation />
         {/* <UserFooter /> */}
