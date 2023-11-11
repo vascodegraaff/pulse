@@ -52,7 +52,7 @@ export default function Home() {
           <LineChartCard
             title="Marathon"
             subtitle="You're having a steady day"
-            data={EXAMPLE_METRICS_A}
+            data={MARATHON_GOAL}
             className="flex-1"
           />
         </div>
