@@ -5,97 +5,64 @@ import * as React from "react";
 import { Detail } from "../components/ListDetail/Detail";
 import { SiteLayout } from "~/components/Layout";
 import { TitleBar } from "~/components/ListDetail/TitleBar";
-// import { TitleBar } from './components/ListDetail/TitleBar'
-
-function SectionTitle(
-  props: React.JSX.IntrinsicAttributes &
-    React.ClassAttributes<HTMLHeadingElement> &
-    React.HTMLAttributes<HTMLHeadingElement>,
-) {
-  return (
-    <h4
-      className="col-span-2 pt-8 text-lg font-extrabold text-black dark:text-white md:pt-0 md:text-right md:text-base md:font-normal md:text-opacity-40"
-      {...props}
-    />
-  );
-}
-
-function SectionContent(
-  props: React.JSX.IntrinsicAttributes &
-    React.ClassAttributes<HTMLDivElement> &
-    React.HTMLAttributes<HTMLDivElement>,
-) {
-  return <div className="col-span-10" {...props} />;
-}
-
-interface TableRowProps {
-  href: string;
-  title: string;
-  date: string;
-  subtitle?: string;
-}
-
-function TableRow({ href, title, subtitle, date }: TableRowProps) {
-  return (
-    <a
-      target="_blank"
-      rel="noopener noreferrer"
-      href={href}
-      className="group flex items-center space-x-4"
-    >
-      <strong className="text-gray-1000 flex-none font-medium group-hover:text-blue-600 group-hover:underline dark:text-gray-100 dark:group-hover:text-blue-500">
-        {title}
-      </strong>
-      <span className="w-full shrink border-t border-dashed border-white dark:border-gray-800" />
-      {subtitle && <span className="text-tertiary flex-none">{subtitle}</span>}
-      {date && (
-        <span className="text-quaternary flex-none font-mono">{date}</span>
-      )}
-    </a>
-  );
-}
-
-function SectionContainer(
-  props: React.JSX.IntrinsicAttributes &
-    React.ClassAttributes<HTMLDivElement> &
-    React.HTMLAttributes<HTMLDivElement>,
-) {
-  return (
-    <div
-      className="grid grid-cols-1 items-start gap-6 md:grid-cols-12"
-      {...props}
-    />
-  );
-}
+import { BlockItem } from "~/components/ui/block-item";
+import { GoalIcon, SparkleIcon } from "lucide-react";
+import { IconListItem } from "~/components/ui/icon-list-item";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardTitle,
+} from "~/components/ui/card";
+import { EXAMPLE_METRICS_A, MARATHON_GOAL } from "data/example-metrics";
+import LineChartCard from "~/components/Cards/LineChartCard";
 
 export default function Home() {
-  // const scrollContainerRef = React.useRef(null)
-  // const titleRef = React.useRef(null)
-
   return (
     <Detail.Container data-cy="home-intro" ref={null}>
-      <TitleBar
-        magicTitle
-        // titleRef={titleRef}
-        // scrollContainerRef={scrollContainerRef}
-        title="Home"
-      />
+      <TitleBar title="Home" />
+      <div className="p-8">
+        <h1 className="text-5xl font-black">Good morning, Bob!</h1>
+        <div className="flex items-center gap-8 py-4">
+          <Card className="my-4 flex-1 rounded-xl p-4">
+            <CardTitle>{"Today's Plan"}</CardTitle>
+            <CardDescription className="text-lg">
+              {"Here's your planning for today:"}
+            </CardDescription>
+            <CardContent className="my-4 flex flex-col gap-4 p-0">
+              <IconListItem icon={SparkleIcon} text="Activity A" color="red" />
+              <IconListItem
+                icon={SparkleIcon}
+                text="Activity B"
+                color="yellow"
+              />
+              <IconListItem icon={SparkleIcon} text="Activity C" color="pink" />
+            </CardContent>
+          </Card>
 
-      {/* Keep this div to trigger the magic scroll */}
-      <div className="p-4" ref={null} />
-
-      <Detail.ContentContainer>
-        <div className="space-y-8 pb-24 md:space-y-16">
-          <SectionContainer>
-            <SectionTitle> Pulse </SectionTitle>
-            <SectionContent>
-              <div className="prose text-primary">
-                <div>Yoooo welcome to Pulse!</div>
-              </div>
-            </SectionContent>
-          </SectionContainer>
+          <LineChartCard
+            title="Heartbeat"
+            subtitle="You're having a steady day"
+            data={EXAMPLE_METRICS_A}
+            className="flex-2"
+          />
         </div>
-      </Detail.ContentContainer>
+
+        <div className="flex items-center gap-8 py-4">
+          <LineChartCard
+            title="Marathon"
+            subtitle="You're having a steady day"
+            data={EXAMPLE_METRICS_A}
+            className="flex-1"
+          />
+        </div>
+
+        <div className="flex items-center gap-8 py-4">
+          <BlockItem color={"purple"} text={"Goals"} icon={GoalIcon} />
+          <BlockItem color={"green"} text={"Goals"} icon={GoalIcon} />
+          <BlockItem color={"sky"} text={"Goals"} icon={GoalIcon} />
+        </div>
+      </div>
     </Detail.Container>
   );
 }

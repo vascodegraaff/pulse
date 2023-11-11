@@ -1,21 +1,21 @@
-import React from 'react'
+import React from "react";
 
-import Sidebar from '../Sidebar'
+import Sidebar from "../Sidebar";
 
 interface Props {
-  list: React.ReactElement | null
-  detail: React.ReactNode | null
-  hasDetail?: boolean
+  list: React.ReactElement | null;
+  detail: React.ReactNode | null;
+  hasDetail?: boolean;
 }
 
 export function ListDetailView({ list, detail, hasDetail = false }: Props) {
   return (
-    <div className='flex w-full'>
+    <div className="flex w-full">
       {list && (
         <div
           id="list"
           className={`bg-dots ${
-            hasDetail ? 'hidden lg:flex' : 'min-h-screen w-full'
+            hasDetail ? "hidden lg:flex" : "min-h-screen w-full"
           }`}
         >
           {list}
@@ -23,7 +23,7 @@ export function ListDetailView({ list, detail, hasDetail = false }: Props) {
       )}
       {detail}
     </div>
-  )
+  );
 }
 
 export function SiteLayout({ children }: React.PropsWithChildren<object>) {
@@ -31,7 +31,7 @@ export function SiteLayout({ children }: React.PropsWithChildren<object>) {
     <div className="relative flex h-full min-h-screen w-full">
       <Sidebar />
 
-      <div className="flex flex-1">{children}</div>
+      <div className="flex  flex-1 flex-col">{children}</div>
     </div>
-  )
+  );
 }

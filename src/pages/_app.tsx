@@ -4,9 +4,15 @@ import { SessionProvider } from "next-auth/react";
 import { type AppType } from "next/app";
 
 import { api } from "~/utils/api";
+import { Red_Hat_Display } from "next/font/google"
 
 import "~/styles/globals.css";
 import { ThemeProvider } from "next-themes";
+
+const redHatDisplay = Red_Hat_Display({
+  weight: ['400', '500', '700'],
+  subsets: ['latin'],
+})
 
 export const NavigationContext = React.createContext({
   isOpen: false,
@@ -33,7 +39,11 @@ const MyApp: AppType<{ session: Session | null }> = ({
     // <SessionProvider session={session}>
       <NavigationContext.Provider value={{ isOpen, setIsOpen, currentRoute, setCurrentRoute }}>
         <ThemeProvider attribute="class" defaultTheme="system">
-          {getLayout(<Component {...pageProps} />)}
+          {getLayout(
+            <main className={redHatDisplay.className} >
+              <Component {...pageProps} />
+            </main>
+          )}
         </ThemeProvider>
       </NavigationContext.Provider>
     // </SessionProvider>
