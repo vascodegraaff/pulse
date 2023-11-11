@@ -42,3 +42,5 @@ yarn-error.log*
 *.tsbuildinfo
 
 package-lock.json
+
+telegram-bot/node_modules

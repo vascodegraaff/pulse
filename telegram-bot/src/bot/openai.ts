@@ -1,11 +1,9 @@
-import { Message } from "node-telegram-bot-api";
 import OpenAI from "openai";
 import { ChatCompletionMessageParam } from "openai/resources";
-import { functions } from "./chat-functions";
 import { generateDailySummary } from "./summaries";
 
 const client = new OpenAI({
-  apiKey: "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",
+  apiKey: "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",
 });
 
 const system_prompt =
