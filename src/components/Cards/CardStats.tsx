@@ -22,11 +22,13 @@ export default function CardsStats() {
         title="Marathon"
         subtitle="40 kms of Glory"
         data={EXAMPLE_METRICS_A}
+        postfix="km"
       />
       <LineChartCard
         title="Daily Pushups"
         subtitle="Yo do more of this"
         data={EXAMPLE_METRICS_A}
+        postfix="pushups"
       />
     </div>
   );

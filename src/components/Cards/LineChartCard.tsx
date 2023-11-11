@@ -10,8 +10,6 @@ import {
   CardTitle,
 } from "../ui/card";
 import { LineChart, Line, Tooltip, ResponsiveContainer } from "recharts";
-import { HeartPulseIcon } from "lucide-react";
-import { IconSquare } from "../ui/icon-square";
 
 export default function LineChartCard({
   title,
@@ -20,6 +18,7 @@ export default function LineChartCard({
   className,
   icon: Icon,
   color,
+  postfix,
 }: {
   title: string;
   subtitle: string;
@@ -27,6 +26,7 @@ export default function LineChartCard({
   className?: string;
   icon?: any;
   color?: string;
+  postfix?: string;
 }) {
   const { theme } = useTheme();
 
@@ -63,7 +63,7 @@ export default function LineChartCard({
                               Goal
                             </span>
                             <span className="text-muted-foreground font-bold">
-                              {payload[0]?.value}
+                              {payload[0]?.value} {postfix}
                             </span>
                           </div>
                           <div className="flex flex-col">
@@ -71,7 +71,7 @@ export default function LineChartCard({
                               Achieved
                             </span>
                             <span className="font-bold">
-                              {payload[1]?.value}
+                              {payload[1]?.value} {postfix}
                             </span>
                           </div>
                         </div>
