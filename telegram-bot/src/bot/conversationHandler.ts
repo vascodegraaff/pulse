@@ -1,6 +1,5 @@
 import TelegramBot, { Message } from 'node-telegram-bot-api';
 import { UserState } from '../types';
-import { saveMoodData } from '../database';
 
 const userStates: Record<number, UserState> = {};
 const questions = [
