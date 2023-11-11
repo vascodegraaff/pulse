@@ -75,3 +75,46 @@ export const EXAMPLE_METRICS_B = [
     today: 2000,
   },
 ];
+
+export const MARATHON_GOAL = [
+  {
+    goal: 2000,
+    achieved: 1800,
+  },
+  {
+    goal: 2100,
+    achieved: 1900,
+  },
+  {
+    goal: 2200,
+    achieved: 2000,
+  },
+  {
+    goal: 2300,
+    achieved: 2100,
+  },
+  {
+    goal: 2400,
+    achieved: 2200,
+  },
+  {
+    goal: 2500,
+    achieved: 2300,
+  },
+  {
+    goal: 2600,
+    achieved: 2400,
+  },
+  {
+    goal: 2700,
+    achieved: 2500,
+  },
+  {
+    goal: 2800,
+    achieved: 2600,
+  },
+  {
+    goal: 2900,
+    achieved: 2700,
+  },
+];

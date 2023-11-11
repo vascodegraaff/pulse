@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { Children } from "react";
 import { useTheme } from "next-themes";
 import {
   Card,
@@ -10,17 +10,23 @@ import {
   CardTitle,
 } from "../ui/card";
 import { LineChart, Line, Tooltip, ResponsiveContainer } from "recharts";
+import { HeartPulseIcon } from "lucide-react";
+import { IconSquare } from "../ui/icon-square";
 
 export default function LineChartCard({
   title,
   subtitle,
   data,
   className,
+  icon: Icon,
+  color,
 }: {
   title: string;
   subtitle: string;
   data: any;
   className?: string;
+  icon?: any;
+  color?: string;
 }) {
   const { theme } = useTheme();
 
@@ -28,7 +34,10 @@ export default function LineChartCard({
   return (
     <Card className={className}>
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
+        <CardTitle className="flex items-center gap-2">
+          {/* <IconSquare color={color} icon={Icon} /> */}
+          {title}
+        </CardTitle>
         <CardDescription>{subtitle}</CardDescription>
       </CardHeader>
       <CardContent className="pb-4">
@@ -47,11 +56,11 @@ export default function LineChartCard({
                 content={({ active, payload }) => {
                   if (active && payload?.length) {
                     return (
-                      <div className="bg-background rounded-lg border p-2 shadow-sm">
+                      <div className="rounded-lg border bg-gray-100 p-2 shadow-sm">
                         <div className="grid grid-cols-2 gap-2">
                           <div className="flex flex-col">
                             <span className="text-muted-foreground text-[0.70rem] uppercase">
-                              Average
+                              Goal
                             </span>
                             <span className="text-muted-foreground font-bold">
                               {payload[0]?.value}
@@ -59,7 +68,7 @@ export default function LineChartCard({
                           </div>
                           <div className="flex flex-col">
                             <span className="text-muted-foreground text-[0.70rem] uppercase">
-                              Today
+                              Achieved
                             </span>
                             <span className="font-bold">
                               {payload[1]?.value}
