@@ -35,6 +35,7 @@ export const env = createEnv({
     GOOGLE_CLIENT_SECRET: z.string(),
     SUPABASE_URL: z.string().url(),
     SUPABASE_ANON_KEY: z.string(),
+    TELEGRAM_BOT_TOKEN: z.string(),
   },
 
   /**
@@ -61,6 +62,7 @@ export const env = createEnv({
     GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
     SUPABASE_ANON_KEY: process.env.SUPABASE_ANON_KEY,
     SUPABASE_URL: process.env.SUPABASE_URL,
+    TELEGRAM_BOT_TOKEN: process.env.TELEGRAM_BOT_TOKEN,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
