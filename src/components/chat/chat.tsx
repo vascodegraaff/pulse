@@ -15,10 +15,6 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
   const { messages, append, reload, stop, isLoading, input, setInput } =
     useChat({
       initialMessages,
-      id,
-      body: {
-        id,
-      },
       onResponse(response) {
         if (response.status === 401) {
           toast.error(response.statusText);
