@@ -30,13 +30,13 @@ const MyApp: AppType<{ session: Session | null }> = ({
   const getLayout = (Component as ComponentType).getLayout ?? ((page) => page);
 
   return (
-    <SessionProvider session={session}>
+    // <SessionProvider session={session}>
       <NavigationContext.Provider value={{ isOpen, setIsOpen, currentRoute, setCurrentRoute }}>
-        <ThemeProvider attribute="class" defaultTheme="light">
+        <ThemeProvider attribute="class" defaultTheme="system">
           {getLayout(<Component {...pageProps} />)}
         </ThemeProvider>
       </NavigationContext.Provider>
-    </SessionProvider>
+    // </SessionProvider>
   );
 };
 
