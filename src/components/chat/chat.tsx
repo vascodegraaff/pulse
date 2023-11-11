@@ -5,6 +5,7 @@ import { toast } from "react-hot-toast";
 import { ChatList } from "./chat-list";
 import { ChatPanel } from "./chat-panel";
 import { EmptyScreen } from "./empty-screen";
+import { functionCallHandler } from "~/lib/chat-functions";
 
 export interface ChatProps extends React.ComponentProps<"div"> {
   initialMessages?: Message[];
@@ -20,6 +21,7 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
           toast.error(response.statusText);
         }
       },
+      experimental_onFunctionCall: functionCallHandler,
     });
 
   return (

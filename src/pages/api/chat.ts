@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { OpenAIStream, StreamingTextResponse } from "ai";
 import { Configuration, OpenAIApi } from "openai-edge";
+import { functions } from "~/lib/chat-functions";
 
 export const runtime = "edge";
 
@@ -19,7 +20,7 @@ export default async function handler(req: any, res: NextApiResponse) {
 
     const response = await openai.createChatCompletion({
       model: "gpt-3.5-turbo-1106",
-      stream: true,
+      stream: false,
       messages: [
         {
           role: "system",
@@ -27,9 +28,17 @@ export default async function handler(req: any, res: NextApiResponse) {
         },
         ...messages,
       ],
+      functions: functions,
     });
 
-    const stream = OpenAIStream(response);
+    console.log(response);
+
+    const stream = OpenAIStream(response, {
+      async onCompletion(completion) {
+        console.log("Completion:", completion);
+        return res.status(200).json(new StreamingTextResponse(stream));
+      },
+    });
     return new StreamingTextResponse(stream);
     // res.status(200).json(new StreamingTextResponse(stream));
   } else {

@@ -19,8 +19,6 @@ export default function CardMetrics({
   subtitle: string;
 }) {
   const { theme } = useTheme();
-
-  console.log(theme);
   return (
     <Card>
       <CardHeader>
