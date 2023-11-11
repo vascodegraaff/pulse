@@ -15,16 +15,10 @@ export default function Sidebar() {
           isOpen
             ? "absolute inset-y-0 left-0 translate-x-0 shadow-lg"
             : "absolute -translate-x-full"
-        } 3xl:w-64 z-30 flex h-full max-h-screen min-h-screen flex-none transform flex-col overflow-y-auto border-r bg-white pb-10 transition duration-200 ease-in-out dark:bg-black sm:w-1/2 sm:pb-0 md:w-1/3 lg:relative lg:z-auto lg:w-56 lg:translate-x-0 lg:bg-gray-50 lg:dark:bg-black 2xl:w-72`}
+        }  z-30  flex h-full max-h-screen min-h-screen w-64 flex-none transform flex-col overflow-y-auto border-r bg-white pb-10 transition duration-200 ease-in-out dark:bg-black sm:w-1/2 sm:pb-0 md:w-1/3 lg:relative lg:z-auto lg:w-56 lg:translate-x-0 lg:bg-gray-50 lg:dark:bg-black 2xl:w-72`}
       >
-        <TitleBar
-          // scrollContainerRef={scrollContainerRef}
-          leadingAccessory={null}
-          title="Pulse"
-          //   subtitle="Beep Beep Beep
-        />
+        <h1 className="p-4 text-3xl font-black">Pulse</h1>
         <SidebarNavigation />
-        {/* <UserFooter /> */}
       </nav>
 
       <SidebarOverlay />

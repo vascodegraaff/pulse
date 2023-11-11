@@ -34,14 +34,14 @@ export default function LineChartCard({
   return (
     <Card className={className}>
       <CardHeader>
-        <CardTitle className="flex items-center gap-2">
+        <CardTitle className="flex items-center  justify-between gap-2">
           {/* <IconSquare color={color} icon={Icon} /> */}
           {title}
         </CardTitle>
         <CardDescription>{subtitle}</CardDescription>
       </CardHeader>
       <CardContent className="pb-4">
-        <div className="h-[200px]">
+        <div className="h-24">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart
               data={data}

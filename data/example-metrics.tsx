@@ -1,31 +1,31 @@
 export const EXAMPLE_METRICS_A = [
   {
-    average: 400,
-    today: 240,
+    average: 5,
+    today: 4,
   },
   {
-    average: 300,
-    today: 139,
+    average: 6,
+    today: 7,
   },
   {
-    average: 200,
-    today: 980,
+    average: 8,
+    today: 9,
   },
   {
-    average: 278,
-    today: 390,
+    average: 7,
+    today: 6,
   },
   {
-    average: 189,
-    today: 480,
+    average: 10,
+    today: 12,
   },
   {
-    average: 239,
-    today: 380,
+    average: 12,
+    today: 11,
   },
   {
-    average: 349,
-    today: 430,
+    average: 13,
+    today: 13,
   },
 ];
 
@@ -78,43 +78,43 @@ export const EXAMPLE_METRICS_B = [
 
 export const MARATHON_GOAL = [
   {
-    goal: 2000,
-    achieved: 1800,
+    average: 2000,
+    today: 1800,
   },
   {
-    goal: 2100,
-    achieved: 1900,
+    average: 2100,
+    today: 1900,
   },
   {
-    goal: 2200,
-    achieved: 2000,
+    average: 2200,
+    today: 2000,
   },
   {
-    goal: 2300,
-    achieved: 2100,
+    average: 2300,
+    today: 2100,
   },
   {
-    goal: 2400,
-    achieved: 2200,
+    average: 2400,
+    today: 2200,
   },
   {
-    goal: 2500,
-    achieved: 2300,
+    average: 2500,
+    today: 2300,
   },
   {
-    goal: 2600,
-    achieved: 2400,
+    average: 2600,
+    today: 2400,
   },
   {
-    goal: 2700,
-    achieved: 2500,
+    average: 2700,
+    today: 2500,
   },
   {
-    goal: 2800,
-    achieved: 2600,
+    average: 2800,
+    today: 2600,
   },
   {
-    goal: 2900,
-    achieved: 2700,
+    average: 2900,
+    today: 2700,
   },
 ];

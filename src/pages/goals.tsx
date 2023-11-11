@@ -13,18 +13,14 @@ import {
   CardContent,
 } from "~/components/ui/card";
 import { ListItem } from "~/components/ListDetail/ListItem";
-import { SparkleIcon } from "lucide-react";
+import { BikeIcon, MoonIcon, SparkleIcon, WeightIcon } from "lucide-react";
 import { IconListItem } from "~/components/ui/icon-list-item";
 
 export default function Goals() {
   return (
     <>
-      <div className="flex items-center justify-between">
-        <TitleBar
-          // titleRef={titleRef}
-          // scrollContainerRef={scrollContainerRef}
-          title="Goals"
-        />
+      <div className="flex items-center justify-between px-8 pt-8 ">
+        <h1 className="text-5xl font-black">Goals</h1>
         <Button className="mr-4">Create new goal</Button>
       </div>
 
@@ -36,13 +32,24 @@ export default function Goals() {
               <CardDescription>{"You doing good bro"}</CardDescription>
             </CardHeader>
             <CardContent className="flex flex-col gap-4">
-              <IconListItem icon={SparkleIcon} text="Activity A" color="red" />
               <IconListItem
-                icon={SparkleIcon}
-                text="Activity B"
+                icon={BikeIcon}
+                goal="Cycling"
+                activity="Activity A"
+                color="red"
+              />
+              <IconListItem
+                icon={WeightIcon}
+                goal="Push-ups"
+                activity="Activity B"
                 color="yellow"
               />
-              <IconListItem icon={SparkleIcon} text="Activity C" color="pink" />
+              <IconListItem
+                icon={MoonIcon}
+                goal="Sleep"
+                activity="7:45 hours"
+                color="purple"
+              />
             </CardContent>
           </Card>
 
@@ -52,13 +59,24 @@ export default function Goals() {
               <CardDescription>{"Get ready boiii"}</CardDescription>
             </CardHeader>
             <CardContent className="flex flex-col gap-4">
-              <IconListItem icon={SparkleIcon} text="Activity A" color="red" />
               <IconListItem
                 icon={SparkleIcon}
-                text="Activity B"
+                goal="Sleep"
+                activity="Activity A"
+                color="red"
+              />
+              <IconListItem
+                icon={BikeIcon}
+                goal="Cycling"
+                activity="50 Minutes"
                 color="yellow"
               />
-              <IconListItem icon={SparkleIcon} text="Activity C" color="pink" />
+              <IconListItem
+                icon={SparkleIcon}
+                goal="Push-ups"
+                activity="Activity C"
+                color="pink"
+              />
             </CardContent>
           </Card>
         </div>

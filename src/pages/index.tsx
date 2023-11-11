@@ -6,7 +6,14 @@ import { Detail } from "../components/ListDetail/Detail";
 import { SiteLayout } from "~/components/Layout";
 import { TitleBar } from "~/components/ListDetail/TitleBar";
 import { BlockItem } from "~/components/ui/block-item";
-import { GoalIcon, SparkleIcon } from "lucide-react";
+import {
+  BikeIcon,
+  CheckIcon,
+  GoalIcon,
+  MoonIcon,
+  SparkleIcon,
+  WeightIcon,
+} from "lucide-react";
 import { IconListItem } from "~/components/ui/icon-list-item";
 import {
   Card,
@@ -19,51 +26,58 @@ import LineChartCard from "~/components/Cards/LineChartCard";
 
 export default function Home() {
   return (
-    <Detail.Container data-cy="home-intro" ref={null}>
-      <TitleBar title="Home" />
-      <div className="p-8">
-        <h1 className="text-5xl font-black">Good morning, Bob!</h1>
-        <div className="flex items-center gap-8 py-4">
-          <Card className="my-4 flex-1 rounded-xl p-4">
-            <CardTitle>{"Today's Plan"}</CardTitle>
-            <CardDescription className="text-lg">
-              {"Here's your planning for today:"}
-            </CardDescription>
-            <CardContent className="my-4 flex flex-col gap-4 p-0">
-              <IconListItem icon={SparkleIcon} text="Activity A" color="red" />
-              <IconListItem
-                icon={SparkleIcon}
-                text="Activity B"
-                color="yellow"
-              />
-              <IconListItem icon={SparkleIcon} text="Activity C" color="pink" />
-            </CardContent>
-          </Card>
-
-          <LineChartCard
-            title="Heartbeat"
-            subtitle="You're having a steady day"
-            data={EXAMPLE_METRICS_A}
-            className="flex-2"
+    <div className="gradientBG fixed h-screen w-full overflow-auto p-6">
+      <h1 className="text-3xl font-black">Good morning, Bob!</h1>
+      <Card className="my-4 rounded-xl p-4">
+        <CardTitle>{"Today's Plan"}</CardTitle>
+        <CardDescription className="pt-2">
+          {"Here's your planning for today:"}
+        </CardDescription>
+        <CardContent className="my-4 flex flex-col gap-4 p-0">
+          <IconListItem
+            icon={BikeIcon}
+            goal={"11:00"}
+            activity="Recovery Run"
+            color="green"
           />
-        </div>
-
-        <div className="flex items-center gap-8 py-4">
-          <LineChartCard
-            title="Marathon"
-            subtitle="You're having a steady day"
-            data={MARATHON_GOAL}
-            className="flex-1"
+          <IconListItem
+            icon={WeightIcon}
+            goal={"16:00"}
+            activity="Workout"
+            color="pink"
           />
-        </div>
 
-        <div className="flex items-center gap-8 py-4">
-          <BlockItem color={"purple"} text={"Goals"} icon={GoalIcon} />
-          <BlockItem color={"green"} text={"Goals"} icon={GoalIcon} />
-          <BlockItem color={"sky"} text={"Goals"} icon={GoalIcon} />
-        </div>
+          <IconListItem
+            icon={MoonIcon}
+            goal="22:00"
+            activity="Go to bed"
+            color="purple"
+          />
+        </CardContent>
+      </Card>
+
+      <LineChartCard
+        title="Progress"
+        subtitle="That marathon coming in hot"
+        data={EXAMPLE_METRICS_A}
+        className="flex-2"
+      />
+
+      <div className="flex items-center gap-8 py-4">
+        <LineChartCard
+          title="Marathon"
+          subtitle="You're having a steady day"
+          data={MARATHON_GOAL}
+          className="flex-1"
+        />
       </div>
-    </Detail.Container>
+
+      <div className="flex items-center gap-8 py-4">
+        <BlockItem color={"purple"} text={"Goals"} icon={GoalIcon} />
+        <BlockItem color={"green"} text={"Goals"} icon={GoalIcon} />
+        <BlockItem color={"sky"} text={"Goals"} icon={GoalIcon} />
+      </div>
+    </div>
   );
 }
 
