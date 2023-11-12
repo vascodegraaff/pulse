@@ -29,50 +29,50 @@ export const EXAMPLE_METRICS_A = [
   },
 ];
 
-export const EXAMPLE_METRICS_B = [
+export const SLEEPING_DATA = [
   {
-    average: 500,
-    today: 1000,
+    average: 6.5,
+    today: 7.2,
   },
   {
-    average: 600,
-    today: 1100,
+    average: 7.1,
+    today: 6.8,
   },
   {
-    average: 700,
-    today: 1200,
+    average: 8.3,
+    today: 7.9,
   },
   {
-    average: 800,
-    today: 1300,
+    average: 7.6,
+    today: 8.2,
   },
   {
-    average: 900,
-    today: 1400,
+    average: 6.9,
+    today: 7.4,
   },
   {
-    average: 1000,
-    today: 1500,
+    average: 7.2,
+    today: 6.6,
   },
   {
-    average: 1100,
-    today: 1600,
+    average: 8.1,
+    today: 7.8,
   },
   {
-    average: 1200,
-    today: 1700,
+    average: 7.4,
+    today: 8.3,
   },
   {
-    average: 1300,
-    today: 1800,
+    average: 6.8,
+    today: 7.1,
   },
   {
-    average: 1400,
-    today: 1900,
+    average: 7.9,
+    today: 8.0,
   },
   {
-    average: 1500,
-    today: 2000,
+    average: 8.2,
+    today: 7.3,
   },
 ];
 
@@ -83,11 +83,11 @@ export const MARATHON_GOAL = [
   },
   {
     average: 2100,
-    today: 1900,
+    today: 2300,
   },
   {
     average: 2200,
-    today: 2000,
+    today: 1950,
   },
   {
     average: 2300,
@@ -95,26 +95,18 @@ export const MARATHON_GOAL = [
   },
   {
     average: 2400,
-    today: 2200,
+    today: 2450,
   },
   {
     average: 2500,
-    today: 2300,
-  },
-  {
-    average: 2600,
-    today: 2400,
-  },
-  {
-    average: 2700,
-    today: 2500,
-  },
-  {
-    average: 2800,
     today: 2600,
   },
   {
-    average: 2900,
-    today: 2700,
+    average: 2600,
+    today: 2450,
+  },
+  {
+    average: 2700,
+    today: 2550,
   },
 ];

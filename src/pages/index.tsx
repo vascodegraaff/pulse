@@ -21,13 +21,23 @@ import {
   CardDescription,
   CardTitle,
 } from "~/components/ui/card";
-import { EXAMPLE_METRICS_A, MARATHON_GOAL } from "data/example-metrics";
+import {
+  EXAMPLE_METRICS_A,
+  MARATHON_GOAL,
+  SLEEPING_DATA,
+} from "data/example-metrics";
 import LineChartCard from "~/components/Cards/LineChartCard";
+import { MoodCard } from "~/components/Cards/MoodCard";
 
 export default function Home() {
   return (
     <div className="gradientBG fixed h-screen w-full overflow-auto p-6">
-      <h1 className="text-3xl font-black">Good morning, Bob!</h1>
+      <h1 className="pt-8 text-3xl font-black">Good morning, Bob!</h1>
+      <div className="flex w-full items-center justify-center gap-8 pt-6">
+        <BlockItem color={"green"} text={"Marathon"} icon={BikeIcon} />
+        <BlockItem color={"sky"} text={"Gym"} icon={WeightIcon} />
+        <BlockItem color={"purple"} text={"Sleep"} icon={MoonIcon} />
+      </div>
       <Card className="my-4 rounded-xl p-4">
         <CardTitle>{"Today's Plan"}</CardTitle>
         <CardDescription className="pt-2">
@@ -44,7 +54,7 @@ export default function Home() {
             icon={WeightIcon}
             goal={"16:00"}
             activity="Workout"
-            color="pink"
+            color="sky"
           />
 
           <IconListItem
@@ -56,26 +66,24 @@ export default function Home() {
         </CardContent>
       </Card>
 
+      <MoodCard />
+
       <LineChartCard
-        title="Progress"
+        title="Marathon"
         subtitle="That marathon coming in hot"
         data={EXAMPLE_METRICS_A}
         className="flex-2"
+        postfix="km"
       />
 
       <div className="flex items-center gap-8 py-4">
         <LineChartCard
-          title="Marathon"
-          subtitle="You're having a steady day"
-          data={MARATHON_GOAL}
+          title="Sleep"
+          subtitle="Average of 7:46 hours"
+          data={SLEEPING_DATA}
           className="flex-1"
+          postfix="hours"
         />
-      </div>
-
-      <div className="flex items-center gap-8 py-4">
-        <BlockItem color={"purple"} text={"Goals"} icon={GoalIcon} />
-        <BlockItem color={"green"} text={"Goals"} icon={GoalIcon} />
-        <BlockItem color={"sky"} text={"Goals"} icon={GoalIcon} />
       </div>
     </div>
   );
